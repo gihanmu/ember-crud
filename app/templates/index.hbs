@@ -1,0 +1,11 @@
+<h1 style="text-align: center;">Welcome to my awesome blog</h1>
+<LinkTo @route="create" class="create">Write a Post</LinkTo>
+<div>
+    {{#each model as |post|}}
+      <div>
+           <span><LinkTo @route="post-details" @model={{post}}>{{post.title}}</LinkTo></span>  <a  class="fas fa-trash-alt" style="margin-left: 2em; color:red" onclick={{action "deletePost" post}}></a>
+      </div>
+    {{/each}}
+</div>
+
+{{outlet}}
